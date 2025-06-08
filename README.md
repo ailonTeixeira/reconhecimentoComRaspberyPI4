@@ -6,6 +6,7 @@
 ![alt text](https://img.shields.io/badge/tecnologia-Python%20%7C%20Flask%20%7C%20RPi-blue)
 
 Protótipo de um dispositivo de segurança veicular que utiliza inteligência artificial e reconhecimento facial para prevenir roubos e furtos. O sistema autoriza o funcionamento do veículo apenas para motoristas cadastrados, controlando a ativação da bomba de combustível.
+
 📖 Sumário
 
     Sobre o Projeto
@@ -25,6 +26,7 @@ Protótipo de um dispositivo de segurança veicular que utiliza inteligência ar
 Este trabalho apresenta o desenvolvimento de um protótipo de dispositivo de segurança automotiva baseado em reconhecimento facial. O núcleo do sistema é uma inteligência artificial que realiza a identificação em tempo real do rosto do condutor.
 
 Caso o sistema não reconheça a pessoa, ele atua diretamente no sistema de ignição, desligando a bomba de combustível e impedindo o funcionamento do motor. Se o motorista for reconhecido, o veículo opera normalmente. O projeto foi desenvolvido sobre um microcomputador Raspberry Pi 4 e conta com uma interface web para o cadastro de novos motoristas.
+
 🚀 Funcionalidades
 
     Cadastro de Usuários via Interface Web: Uma aplicação web amigável para cadastrar novos motoristas autorizados.
