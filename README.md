@@ -90,19 +90,23 @@ Software e Bibliotecas
     Controle de Hardware: RPi.GPIO
 
 Para que o protótipo funcione, o ambiente de software requer a linguagem Python e as bibliotecas essenciais listadas acima. A configuração do hardware envolve conectar a câmera e o módulo relé ao Raspberry Pi. O relé é o componente chave que se integra ao sistema elétrico do veículo para controlar a bomba de combustível, uma etapa que exige cuidado técnico para garantir a segurança.
+
 ▶️ Processo de Utilização
 
 O uso do sistema é dividido em duas etapas operacionais distintas:
+
 Etapa 1: Cadastro de Novos Motoristas
 
 Para cadastrar um novo motorista, a aplicação web do sistema é ativada. Através de um navegador, o administrador acessa uma página de login segura. Após a autenticação, ele insere o nome do novo usuário. A interface então guia o motorista por um processo de captura de cinco imagens do seu rosto em diferentes ângulos ("olhe para a câmera", "vire para a esquerda", etc.) para garantir um reconhecimento mais preciso.
 
 Ao final da captura, essas imagens são enviadas ao sistema, que automaticamente inicia o processo de treinamento do modelo de inteligência artificial, atualizando sua base de dados de rostos autorizados sem necessidade de intervenção manual.
+
 Etapa 2: Operação do Sistema de Segurança
 
 Com os motoristas já cadastrados, o sistema de segurança principal é ativado no veículo. Este módulo opera em modo de vigilância contínua. Ao tentar ligar o carro, a câmera captura o rosto do condutor. O software de reconhecimento facial analisa a imagem em tempo real.
 
 Se o rosto corresponder a um motorista autorizado na base de dados, o sistema envia um sinal para o relé, liberando o funcionamento da bomba de combustível e permitindo que o carro seja ligado. Caso contrário, se o rosto for desconhecido ("Intruso") ou não for detectado, o relé permanece desativado, impedindo a partida do veículo e frustrando a tentativa de furto.
+
 📊 Resultados
 
 Os experimentos realizados demonstraram que o dispositivo atende aos requisitos propostos. O protótipo foi capaz de detectar e reconhecer com sucesso a face de uma pessoa, enviando o comando correto para o relé da bomba de combustível e validando a eficácia do conceito para a prevenção de furtos.
