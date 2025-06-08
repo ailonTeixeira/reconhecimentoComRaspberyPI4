@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capture</title>
+    <!-- Inclui o CSS do Bootstrap para estilização -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Estiliza o contêiner do vídeo para centralizar e posicionar o botão de captura */
+        #video-container {
+            position: relative;
+            text-align: center;
+        }
+        /* Posiciona o botão de captura no centro do contêiner de vídeo */
+        #capture-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+        /* Define o tamanho máximo do vídeo */
+        #video {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Capture Images</h2>
+        <!-- Formulário para capturar e enviar imagens -->
+        <form id="capture-form" action="{{ url_for('save_images') }}" method="POST">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div id="video-container">
+                <!-- Vídeo ao vivo da câmera -->
+                <img src="{{ url_for('video_feed') }}" id="video" class="img-fluid">
+                <!-- Botão de captura de imagem -->
+                <button type="button" id="capture-button" class="btn btn-primary" onclick="captureImage()">Olhe para a câmera</button>
+            </div>
+            <!-- Campos ocultos para armazenar as imagens capturadas -->
+            <input type="hidden" name="image_0" id="image_0">
+            <input type="hidden" name="image_1" id="image_1">
+            <input type="hidden" name="image_2" id="image_2">
+            <input type="hidden" name="image_3" id="image_3">
+            <input type="hidden" name="image_4" id="image_4">
+            <!-- Botão de envio do formulário, inicialmente escondido -->
+            <button type="submit" class="btn btn-success btn-block mt-3" id="submit-button" style="display: none;">Submit</button>
+        </form>
+    </div>
+
+
+    <script>
+        let imgCounter = 0; // Contador para controlar a captura de imagens
+        // Instruções para o usuário durante a captura de imagens
+        const instructions = [
+            "Olhe para a câmera",
+            "Vire o rosto para esquerda",
+            "Olhe para direita",
+            "Levante a cabeça",
+            "Baixe a cabeça"
+        ];
+
+
+        function captureImage() {
+            const video = document.getElementById('video');
+            const canvas = document.createElement('canvas');
+            canvas.width = video.width;
+            canvas.height = video.height;
+            const context = canvas.getContext('2d');
+            // Desenha o vídeo no canvas
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+
+            // Converte a imagem do canvas para URL base64
+            const dataUrl = canvas.toDataURL('image/jpeg');
+            document.getElementById('image_' + imgCounter).value = dataUrl;
+
+
+            imgCounter++;
+            if (imgCounter < 5) {
+                // Atualiza o texto do botão de captura com a próxima instrução
+                document.getElementById('capture-button').innerText = instructions[imgCounter];
+            } else {
+                // Esconde o botão de captura e mostra o botão de envio do formulário
+                document.getElementById('capture-button').style.display = 'none';
+                document.getElementById('submit-button').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
