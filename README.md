@@ -28,19 +28,19 @@ Caso o sistema não reconheça a pessoa, ele atua diretamente no sistema de igni
 🚀 Funcionalidades
 
     Cadastro de Usuários via Interface Web: Uma aplicação web amigável para cadastrar novos motoristas autorizados.
-    ![image](https://github.com/user-attachments/assets/cd1c1b15-3bbd-4739-950f-757b5af55ff6)
+   ![image](https://github.com/user-attachments/assets/cd1c1b15-3bbd-4739-950f-757b5af55ff6)
 
     Captura Guiada de Imagens: O sistema instrui o usuário a posicionar o rosto em diferentes ângulos para um cadastro mais robusto.
-    ![image](https://github.com/user-attachments/assets/a4222513-003b-4ab6-85e5-3508f0b10735)
+   ![image](https://github.com/user-attachments/assets/a4222513-003b-4ab6-85e5-3508f0b10735)
 
     Treinamento Automático do Modelo: A IA é retreinada automaticamente após cada novo cadastro.
-    ![image](https://github.com/user-attachments/assets/7454fd25-bc99-464c-b17d-882c9613ef68)
+   ![image](https://github.com/user-attachments/assets/7454fd25-bc99-464c-b17d-882c9613ef68)
 
     Reconhecimento Facial em Tempo Real: Identifica o motorista assim que ele entra no veículo.
-    ![image](https://github.com/user-attachments/assets/a42c8712-5169-4f35-8373-cfba8578fc01)
+   ![image](https://github.com/user-attachments/assets/a42c8712-5169-4f35-8373-cfba8578fc01)
 
     Controle da Bomba de Combustível: Interage com um relé para habilitar ou desabilitar a alimentação da bomba de combustível.
-    ![image](https://github.com/user-attachments/assets/9ce670d7-f859-4ec9-843d-d4a0873b05b5)
+   ![image](https://github.com/user-attachments/assets/9ce670d7-f859-4ec9-843d-d4a0873b05b5)
 
 ⚙️ Arquitetura e Funcionamento
 
